@@ -7,10 +7,6 @@ print("Abrindo caixa registradora...")
 produtos = listar_produtos()
 
 
-lista_clientes = adicionando_cliente()
-identificar_cliente(lista_clientes)
-iniciar_atendimento()
-
 while True:
     print("Atendimento iniciado.")
     print("Digite de  2 para selecionar uma opção do menu: ")
