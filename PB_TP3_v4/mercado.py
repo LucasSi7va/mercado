@@ -3,10 +3,11 @@ from crud import *
 from models import *
 from Login_menu import *
 
-
-
-logando()
-
+while True:
+    iniciar_atendimento()
+    logando()
+    if finalizar_atendimento():
+        break
 
 
 
