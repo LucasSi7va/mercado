@@ -6,7 +6,7 @@ from models import produto
 nome_db = "mercado.db"
 
 def carregar_produtos_do_banco():
-    produtos_db = []  # LISTA e não dicionário
+    produtos_db = [] 
 
     try:
         conexao = sqlite3.connect(nome_db)

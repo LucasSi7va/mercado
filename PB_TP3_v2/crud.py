@@ -4,12 +4,14 @@ def iniciar_atendimento():
     return resposta == 's'
 
 
-def adicionando_cliente():
-    clientes = []
+def adicionando_cliente(clientes):
     print("Digite o id do cliente:")
-    id_cliente = int(input())
-    clientes.append(id_cliente)
+    id_cliente = len(clientes) + 1  # Cliente 1, Cliente 2, etc.
+    print(f"Cliente {id_cliente} cadastrado.")
 
+    clientes[id_cliente] = []
+    
+    return id_cliente, clientes 
 
 
 def finalizar_atendimento():

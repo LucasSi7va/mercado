@@ -1,4 +1,4 @@
-from models import produto
+
 
 #questao 4
 def iniciar_atendimento():

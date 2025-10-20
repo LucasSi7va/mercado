@@ -20,7 +20,6 @@ def listar_produtos():
 
     return produtos
 
-
 def carregar_produto(produtos):
     try:
         with open(ARQ, "w" , encoding="utf-8") as arquivo:
