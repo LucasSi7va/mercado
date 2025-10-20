@@ -4,6 +4,22 @@ from tabulate import tabulate
 from models import produto
 
 
+def carregar_produtos_do_banco():
+    session = conectar()
+    if not session:
+        print("Não foi possível conectar ao banco de dados.")
+        return []
+
+    try:
+        produtos = session.query(produto).all()
+        return produtos
+    except Exception as e:
+        print(f"Erro ao carregar produtos do banco de dados: {e}")
+        return []
+    finally:
+        desconectar(session)
+
+
 
 def iniciar_atendimento():
    return input("Deseja inicializar o atendimento? (s/n) ").lower() == 's'
@@ -103,11 +119,9 @@ def fechar_caixa(clientes):
 def finalizar_atendimento():
     return input("Deseja finalizar o atendimento? (s/n) ").lower() == 's'
 
-
-
 def main():
     clientes = []
-    produtos = listar_produtos()
+    produtos = carregar_produtos_do_banco()
 
     while iniciar_atendimento():
         id_cliente, clientes = adicionando_cliente(clientes)
